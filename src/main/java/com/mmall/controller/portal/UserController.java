@@ -46,7 +46,7 @@ public class UserController {
     @ResponseBody
     public ServerResponse<User> logout(HttpSession session) {
         session.removeAttribute(Const.CURRENT_USER);
-        return ServerResponse.createBySuccess();
+        return ServerResponse.createBySuccessMessage("退出登录成功");
     }
 
     /**
@@ -163,6 +163,11 @@ public class UserController {
         return response;
     }
 
+    /**
+     * 获取个人信息
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "get_information.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> get_information(HttpSession session) {
