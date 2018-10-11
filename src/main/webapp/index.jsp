@@ -8,9 +8,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Index</title>
 </head>
 <body>
-    Hello World!
+    Hello World!<br/>
+    SpringMVC上传文件
+<form name="form1" action="/manage/product/upload.do" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload_file" />
+    <input type="submit" value="SpringMVC上传文件" />
+</form>
+    富文本文件上传
+<form name="form1" action="/manage/product/richtext_img.do" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload_file" />
+    <input type="submit" value="富文本文件上传" />
+</form>
 </body>
 </html>
