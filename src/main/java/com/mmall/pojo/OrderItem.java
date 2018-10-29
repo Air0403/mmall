@@ -10,7 +10,7 @@ public class OrderItem {
 
     private Long orderNo;
 
-    private Integer produceId;
+    private Integer productId;
 
     private String productName;
 
@@ -20,17 +20,17 @@ public class OrderItem {
 
     private Integer quantity;
 
-    private Long totalPrice;
+    private BigDecimal totalPrice;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public OrderItem(Integer id, Integer userId, Long orderNo, Integer produceId, String productName, String productImage, BigDecimal currentUnitPrice, Integer quantity, Long totalPrice, Date createTime, Date updateTime) {
+    public OrderItem(Integer id, Integer userId, Long orderNo, Integer productId, String productName, String productImage, BigDecimal currentUnitPrice, Integer quantity, BigDecimal totalPrice, Date createTime, Date updateTime) {
         this.id = id;
         this.userId = userId;
         this.orderNo = orderNo;
-        this.produceId = produceId;
+        this.productId = productId;
         this.productName = productName;
         this.productImage = productImage;
         this.currentUnitPrice = currentUnitPrice;
@@ -68,12 +68,12 @@ public class OrderItem {
         this.orderNo = orderNo;
     }
 
-    public Integer getProduceId() {
-        return produceId;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProduceId(Integer produceId) {
-        this.produceId = produceId;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -108,11 +108,11 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public Long getTotalPrice() {
+    public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 

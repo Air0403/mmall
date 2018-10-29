@@ -120,7 +120,7 @@ public class ProductServiceImpl implements IProductService {
         List<Product> productList = productMapper.selectList();
 
         List<ProductListVo> productListVoList = Lists.newArrayList();
-        for (Product productItem: productList) {
+        for (Product productItem : productList) {
             ProductListVo productListVo = assembleProductListVo(productItem);
             productListVoList.add(productListVo);
         }

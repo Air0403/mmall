@@ -33,15 +33,4 @@ public class ProductController {
         return productService.getProductBykeywordCategory(keyword, categoryId, pageNum, pageSize, orderBy);
     }
 
-
-
-
-
-
-
-
-
-
-
-
 }

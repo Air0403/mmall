@@ -141,6 +141,7 @@
     delete from mmall_cart
     where user_id = #{userId}
     <if test="productIdList != null">
+      and product_id in
       <foreach collection="productIdList" item="item" index="index" open="(" separator="," close=")" >
         #{item}
       </foreach>
@@ -149,7 +150,7 @@
 
   <update id="checkedOrUncheckedProduct" parameterType="map">
     update mmall_cart
-    set checked = #{checked}
+    set checked = #{checked},
     update_time = now()
     where user_id = #{userId}
     <if test="productId != null" >
@@ -161,5 +162,13 @@
     select IFNULL(sum(quantity),0) as count
     from mmall_cart
     where user_id = #{userId}
+  </select>
+  
+  <select id="selectCheckedCartByUserId" parameterType="int" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from mmall_cart
+    where user_id = #{userId}
+    and checked = 1
   </select>
 </mapper>
