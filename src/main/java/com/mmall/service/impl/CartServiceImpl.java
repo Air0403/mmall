@@ -65,7 +65,7 @@ public class CartServiceImpl implements ICartService {
         if (cart != null) {
             cart.setQuantity(count);
         }
-        cartMapper.updateByPrimaryKeySelective(cart);
+        cartMapper.updateByPrimaryKey(cart);
         return this.list(userId);
     }
 
@@ -79,7 +79,7 @@ public class CartServiceImpl implements ICartService {
     }
 
     public ServerResponse<CartVo> selectOrUnSelect(Integer userId, Integer productId, Integer checked) {
-        cartMapper.checkedOrUncheckedProduct(userId,null,checked);
+        cartMapper.checkedOrUncheckedProduct(userId,productId,checked);
         return this.list(userId);
     }
 
